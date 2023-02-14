@@ -281,8 +281,12 @@ while True:
                 scene = 1
 
             # 10.1 - ゲーム中にスペースキーを押したらレーザーを発射する
-
-            # ここでレーザーを発射するコードを入力
+            if event.key == K_SPACE and scene == 1:
+                p_lasers.append(
+                    [p_x + p_width / 2 - p_laser_width / 2, p_y - p_laser_height]
+                )
+                p_laser_counter += 1
+                p_laser_sound.play()
 
             # 10.2 - Score 画面で t を押したらスタート画面へ戻る
             if event.key == K_t and scene == 2:
